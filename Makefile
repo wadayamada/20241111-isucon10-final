@@ -61,7 +61,7 @@ restart:
 benchmark:
 	@echo "--- benchmark ---"
 	sudo systemctl start envoy
-	sudo systemctl start xsuportal-api-$LANGUAGE.service
-	sudo systemctl start xsuportal-web-$LANGUAGE.service
+	sudo systemctl start xsuportal-api-golang.service
+	sudo systemctl start xsuportal-web-golang.service
 	cd benchmarker
 	bin/benchmarker
