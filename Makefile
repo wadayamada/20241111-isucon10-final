@@ -63,4 +63,4 @@ benchmark:
 	sudo systemctl start envoy
 	sudo systemctl start xsuportal-api-golang.service
 	sudo systemctl start xsuportal-web-golang.service
-	bin/benchmarker
+	cd ../benchmarker && bin/benchmarker
