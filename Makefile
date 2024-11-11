@@ -58,6 +58,10 @@ restart:
 # go build app.go
 
 .PHONY: benchmark
-benchmark: rotate restart slow-on 
+benchmark:
 	@echo "--- benchmark ---"
-	/home/isucon/private_isu/benchmarker/bin/benchmarker -u /home/isucon/private_isu/benchmarker/userdata -t http://localhost
+	sudo systemctl start envoy
+	sudo systemctl start xsuportal-api-$LANGUAGE.service
+	sudo systemctl start xsuportal-web-$LANGUAGE.service
+	cd benchmarker
+	bin/benchmarker
